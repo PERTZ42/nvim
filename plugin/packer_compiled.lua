@@ -119,6 +119,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\PERTZ\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\PERTZ\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\onedark.nvim",
+    url = "https://github.com/navarasu/onedark.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "C:\\Users\\PERTZ\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\packer.nvim",
