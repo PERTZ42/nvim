@@ -1,11 +1,4 @@
-require("pertz")
+-- all the configs are in lua/config
+require("config")
 
--- plugins --
-require("mason").setup()
-require("treesitter")
-require("mason-lspconfig").setup()
--- After setting up mason-lspconfig you may set up servers via lspconfig
-require("lsp-zero").setup()
--- require("lsp")
-
-
+-- add plugins to pack/plugins/start with git clone or git submodule add
