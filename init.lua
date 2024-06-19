@@ -4,6 +4,26 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- Highlights
+DefineNeovimColors = function()
+  vim.cmd.colorscheme 'deviuspro'
+  vim.opt.colorcolumn = '80'
+  vim.cmd.hi 'ColorColumn guibg=#5d1b1c'
+  vim.cmd.hi 'LineNr guifg=#bf676e'
+  vim.cmd.hi 'LineNrBelow guifg=#4d4d4d'
+  vim.cmd.hi 'LineNrAbove guifg=#4d4d4d'
+  vim.cmd.hi 'Normal guibg=#0d0d0d'
+  -- vim.cmd.hi 'NonText guibg=none'
+  -- vim.cmd.hi 'NonText ctermbg=none'
+  -- vim.cmd.hi 'TelescopeNormal guibg=none'
+  -- vim.cmd.hi 'TelescopeBorder guibg=none'
+  -- vim.cmd.hi 'TelescopePromptBorder guibg=none'
+  -- vim.cmd.hi 'TelescopePromptTitle guibg=none'
+  -- vim.cmd.hi 'NormalSB guibg=none'
+  --You can configure highlights by doing something like:
+  vim.cmd.hi 'Comment gui=none'
+end
+
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
@@ -43,7 +63,7 @@ vim.opt.smartcase = true
 vim.opt.signcolumn = 'yes'
 
 -- Decrease update time
-vim.opt.updatetime = 250
+vim.opt.updatetime = 50
 
 -- Decrease mapped sequence wait time
 -- Displays which-key popup sooner
@@ -52,7 +72,6 @@ vim.opt.timeoutlen = 1000
 -- Configure how new splits should be opened
 vim.opt.splitright = true
 vim.opt.splitbelow = true
-
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
@@ -63,7 +82,7 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vim.opt.inccommand = 'split'
 
 -- Show which line your cursor is on
-vim.opt.cursorline = true
+vim.opt.cursorline = false
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
@@ -691,30 +710,34 @@ require('lazy').setup({
     -- Change the name of the colorscheme plugin below, and then
     -- change the command in the config to whatever the name of that colorscheme is.
     --
-    -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    'folke/tokyonight.nvim',
-    priority = 1000, -- Make sure to load this before all the other start plugins.
+    'DanielEliasib/sweet-fusion',
+    name = 'sweet-fusion',
+    priority = 1000,
     opts = {
-      transparent = true, -- Enable this to disable setting the background color
+      terminal_colors = true,
+      hl_styles = {
+        comments = { italic = true },
+        keywords = {},
+        funtions = {},
+        variables = {},
+      },
+      -- Set transparent background
+      transparency = false,
+      dim_inactive = false,
     },
+    -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
+    -- 'folke/tokyonight.nvim',
+    -- priority = 1000, -- Make sure to load this before all the other start plugins.
+    -- opts = {
+    --   transparent = true, -- Enable this to disable setting the background color
+    -- },
     init = function()
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'tokyonight-night'
-      -- vim.cmd.colorscheme 'habamax'
-
-      -- Make things transparent
-      vim.cmd.hi 'Normal guibg=#171717'
-      vim.cmd.hi 'NonText guibg=none'
-      vim.cmd.hi 'NonText ctermbg=none'
-      vim.cmd.hi 'TelescopeNormal guibg=none'
-      vim.cmd.hi 'TelescopeBorder guibg=none'
-      vim.cmd.hi 'TelescopePromptBorder guibg=none'
-      vim.cmd.hi 'TelescopePromptTitle guibg=none'
-      vim.cmd.hi 'NormalSB guibg=none'
-      -- You can configure highlights by doing something like:
-      vim.cmd.hi 'Comment gui=none'
+      -- vim.cmd.colorscheme 'tokyonight-night'
+      vim.cmd.colorscheme 'sweet-fusion'
+      vim.cmd.colorscheme 'deviuspro'
     end,
   },
 
@@ -835,5 +858,6 @@ require('lazy').setup({
   },
 })
 
+DefineNeovimColors()
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
