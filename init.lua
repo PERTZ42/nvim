@@ -3,7 +3,6 @@
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-
 -- Highlights
 DefineNeovimColors = function()
   vim.cmd.colorscheme 'deviuspro'
@@ -13,6 +12,8 @@ DefineNeovimColors = function()
   vim.cmd.hi 'LineNrBelow guifg=#4d4d4d'
   vim.cmd.hi 'LineNrAbove guifg=#4d4d4d'
   vim.cmd.hi 'Normal guibg=#0d0d0d'
+  vim.cmd.hi 'Normal guibg=none'
+  vim.cmd.hi 'SignColumn guibg=none'
   -- vim.cmd.hi 'NonText guibg=none'
   -- vim.cmd.hi 'NonText ctermbg=none'
   -- vim.cmd.hi 'TelescopeNormal guibg=none'
