@@ -11,9 +11,9 @@ return {
       { '<leader>u', "<cmd>lua require('undotree').toggle()<cr>" },
     },
   },
-  {
-    'DeviusVim/deviuspro.nvim',
-  },
+  -- {
+  --   'DeviusVim/deviuspro.nvim',
+  -- },
   {
     'christoomey/vim-tmux-navigator',
     cmd = {
@@ -87,5 +87,8 @@ return {
     },
     -- mason-nvim-dap is loaded when nvim-dap loads
     config = function() end,
+  },
+  {
+    'tpope/vim-fugitive',
   },
 }

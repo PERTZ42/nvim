@@ -1,0 +1,3 @@
+10gs = go to sleep for 10 seconds
+5i{writestuff}esc = writestuff 5 times
+5o{writestuff}esc = write thing on 5 lines

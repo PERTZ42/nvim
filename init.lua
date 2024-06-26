@@ -3,9 +3,14 @@
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+-- vim.cmd.colorscheme 'slate'
+-- vim.cmd.colorscheme 'deviuspro'
+-- vim.cmd.colorscheme 'habamax'
+vim.cmd.colorscheme 'lunaperche'
+-- vim.cmd.colorscheme 'sorbet'
 -- Highlights
+
 DefineNeovimColors = function()
-  vim.cmd.colorscheme 'deviuspro'
   vim.opt.colorcolumn = '80'
   vim.cmd.hi 'ColorColumn guibg=#5d1b1c'
   vim.cmd.hi 'LineNr guifg=#bf676e'
@@ -14,13 +19,19 @@ DefineNeovimColors = function()
   vim.cmd.hi 'Normal guibg=#0d0d0d'
   vim.cmd.hi 'Normal guibg=none'
   vim.cmd.hi 'SignColumn guibg=none'
-  -- vim.cmd.hi 'NonText guibg=none'
-  -- vim.cmd.hi 'NonText ctermbg=none'
-  -- vim.cmd.hi 'TelescopeNormal guibg=none'
-  -- vim.cmd.hi 'TelescopeBorder guibg=none'
-  -- vim.cmd.hi 'TelescopePromptBorder guibg=none'
-  -- vim.cmd.hi 'TelescopePromptTitle guibg=none'
-  -- vim.cmd.hi 'NormalSB guibg=none'
+  vim.cmd.hi 'diagnosticOk guibg=#261f24'
+  vim.cmd.hi 'diagnosticInfo guibg=#261f24'
+  vim.cmd.hi 'diagnosticWarn guibg=#261f24'
+  vim.cmd.hi 'diagnosticError guibg=#261f24'
+  vim.cmd.hi 'diagnosticHint guibg=#261f24'
+
+  vim.cmd.hi 'NonText guibg=none'
+  vim.cmd.hi 'NonText ctermbg=none'
+  vim.cmd.hi 'TelescopeNormal guibg=none'
+  vim.cmd.hi 'TelescopeBorder guibg=none'
+  vim.cmd.hi 'TelescopePromptBorder guibg=none'
+  vim.cmd.hi 'TelescopePromptTitle guibg=none'
+  vim.cmd.hi 'NormalSB guibg=none'
   --You can configure highlights by doing something like:
   vim.cmd.hi 'Comment gui=none'
 end
@@ -157,7 +168,7 @@ vim.opt.rtp:prepend(lazypath)
 --  To update plugins you can run
 --    :Lazy update
 --
--- NOTE: Here is where you install your plugins.
+-- Here is where you install your plugins.
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
@@ -707,40 +718,40 @@ require('lazy').setup({
     end,
   },
 
-  { -- You can easily change to a different colorscheme.
-    -- Change the name of the colorscheme plugin below, and then
-    -- change the command in the config to whatever the name of that colorscheme is.
-    --
-    'DanielEliasib/sweet-fusion',
-    name = 'sweet-fusion',
-    priority = 1000,
-    opts = {
-      terminal_colors = true,
-      hl_styles = {
-        comments = { italic = true },
-        keywords = {},
-        funtions = {},
-        variables = {},
-      },
-      -- Set transparent background
-      transparency = false,
-      dim_inactive = false,
-    },
-    -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    -- 'folke/tokyonight.nvim',
-    -- priority = 1000, -- Make sure to load this before all the other start plugins.
-    -- opts = {
-    --   transparent = true, -- Enable this to disable setting the background color
-    -- },
-    init = function()
-      -- Load the colorscheme here.
-      -- Like many other themes, this one has different styles, and you could load
-      -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      -- vim.cmd.colorscheme 'tokyonight-night'
-      vim.cmd.colorscheme 'sweet-fusion'
-      vim.cmd.colorscheme 'deviuspro'
-    end,
-  },
+  -- { -- You can easily change to a different colorscheme.
+  --   -- Change the name of the colorscheme plugin below, and then
+  --   -- change the command in the config to whatever the name of that colorscheme is.
+  --   --
+  --   'DanielEliasib/sweet-fusion',
+  --   name = 'sweet-fusion',
+  --   priority = 1000,
+  --   opts = {
+  --     terminal_colors = true,
+  --     hl_styles = {
+  --       comments = { italic = true },
+  --       keywords = {},
+  --       funtions = {},
+  --       variables = {},
+  --     },
+  --     -- Set transparent background
+  --     transparency = false,
+  --     dim_inactive = false,
+  --   },
+  --   -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
+  --   -- 'folke/tokyonight.nvim',
+  --   -- priority = 1000, -- Make sure to load this before all the other start plugins.
+  --   -- opts = {
+  --   --   transparent = true, -- Enable this to disable setting the background color
+  --   -- },
+  --   init = function()
+  --     -- Load the colorscheme here.
+  --     -- Like many other themes, this one has different styles, and you could load
+  --     -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
+  --     -- vim.cmd.colorscheme 'tokyonight-night'
+  --     -- vim.cmd.colorscheme 'sweet-fusion'
+  --     -- vim.cmd.colorscheme 'deviuspro'
+  --   end,
+  -- },
 
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
